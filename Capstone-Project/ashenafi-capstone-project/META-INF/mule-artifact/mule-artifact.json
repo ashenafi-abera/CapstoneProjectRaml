@@ -1,0 +1,31 @@
+{
+  "configs": [
+    "ashenafi-capstone-project.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:ashenafi-capstone-project:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.2.0",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/ashenafi-capstone-project.raml",
+        "api/DataType/userwithid.raml",
+        "api/DataType/userwithNoId.raml",
+        "api/Examples/getAllUsers.raml",
+        "api/Examples/getById.raml",
+        "api/Examples/post.raml",
+        "api/Examples/put.raml",
+        "ashenafi-capstone-project.xml",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

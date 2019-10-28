@@ -1,0 +1,82 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/862022a8-2e8f-4666-8628-e386a00343f9/ # 
+version: v1
+title: Ashenafi Capstone Project 
+
+types: 
+  userswithid: !include DataType/userwithid.raml
+  userswithNoId: !include DataType/userwithNoId.raml
+/users:
+  description: This will get all users information!
+  get:
+   responses:
+     200:
+       description: 
+       body:
+         application/json:
+           type: userswithid []
+           example: !include Examples/getAllUsers.raml
+
+  /{id}:
+    description: This get method gets users by id
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include Examples/getById.raml
+            
+  post:
+    description: This post method creates a new user!
+    body:
+      application/json:
+        type: userswithNoId []
+        example: !include Examples/post.raml
+    
+    responses: 
+      201:
+        body:
+          application/json:
+            example: 
+              {"msg": "users information has created"}
+            
+
+  put:
+    description: This method updates user!
+    
+    body:
+      application/json:
+        type: userswithid []
+        example: !include Examples/put.raml
+        
+    responses:
+      200:
+        body:
+          application/json:
+            example:  
+              {"msg": "users information updated"}
+
+  delete:
+    description: This method delets user by id!
+    queryParameters:
+      id:
+        required: true
+        type: integer       
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"msg": "User Information Deleted"}
+           
+                
+        
+
+                
+                
+      
+
+      
+            
+                                 
+  
